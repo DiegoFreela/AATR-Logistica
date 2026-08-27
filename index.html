@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AATR Transporte &amp; Logística — Carga lotação, baú e grade baixa</title>
+<meta name="description" content="Transporte rodoviário de carga fechada com truck, carreta, baú e grade baixa. Coletas e entregas em São Paulo e rotas para todo o Sul e Sudeste. Entregas rápidas, soluções inteligentes.">
+<meta name="theme-color" content="#0A2540">
+<link rel="icon" href="logo-aatr.png">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800&family=Barlow:ital,wght@0,400;0,500;0,600;1,500&family=Barlow+Semi+Condensed:wght@500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+<!-- ================= NAV ================= -->
+<nav class="navbar navbar-expand-xl fixed-top site-nav" id="siteNav">
+  <div class="container">
+    <a class="navbar-brand brand" href="#topo">
+      <img src="logo-aatr-branco.png" alt="AATR Transporte e Logística" class="brand-img brand-light">
+      <img src="logo-aatr.png" alt="" aria-hidden="true" class="brand-img brand-dark">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir menu">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto align-items-xl-center">
+        <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
+        <li class="nav-item"><a class="nav-link" href="#frota">Frota</a></li>
+        <li class="nav-item"><a class="nav-link" href="#carrocerias">Carrocerias</a></li>
+        <li class="nav-item"><a class="nav-link" href="#cobertura">Rotas</a></li>
+        <li class="nav-item"><a class="nav-link" href="#seguranca">Segurança</a></li>
+        <li class="nav-item"><a class="nav-link" href="#faq">Dúvidas</a></li>
+        <li class="nav-item"><a class="nav-link nav-driver" href="motorista.php">Motorista</a></li>
+        <li class="nav-item ms-xl-3 mt-3 mt-xl-0">
+          <a class="btn btn-brand w-100" href="#contato">Cotar frete</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main id="conteudo">
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="topo">
+  <div class="hero-road" aria-hidden="true"></div>
+  <div class="speed-field" aria-hidden="true">
+    <span style="--t:6%;  --w:180px; --d:0s"></span>
+    <span style="--t:18%; --w:120px; --d:1.4s"></span>
+    <span style="--t:31%; --w:260px; --d:.6s"></span>
+    <span style="--t:47%; --w:90px;  --d:2.1s"></span>
+    <span style="--t:63%; --w:200px; --d:1s"></span>
+    <span style="--t:78%; --w:140px; --d:2.6s"></span>
+    <span style="--t:90%; --w:230px; --d:1.8s"></span>
+  </div>
+
+  <div class="container position-relative">
+    <div class="row align-items-center gy-5">
+      <div class="col-lg-6 hero-copy">
+        <p class="eyebrow"><i class="lines" aria-hidden="true"></i> Carga lotação · Baú e grade baixa · Base em Jundiaí</p>
+        <h1 class="display-hero">
+          Um caminhão.<br>
+          Uma carga.<br>
+          <em>Um destino.</em>
+        </h1>
+        <p class="lead-hero">
+          Transporte de carga fechada com truck, carreta, baú e grade baixa. Sua mercadoria
+          sai do pátio e vai direto ao destino — sem transbordo, sem dividir espaço com
+          carga de terceiro, sem parada em terminal.
+        </p>
+        <div class="hero-cta">
+          <a href="#contato" class="btn btn-brand btn-lg">Cotar frete</a>
+          <a href="#frota" class="btn btn-ghost btn-lg">Ver a frota</a>
+        </div>
+        <ul class="hero-marks">
+          <li>Até 37 t por viagem</li>
+          <li>CT-e e MDF-e emitidos</li>
+          <li>Carga segurada e rastreada</li>
+        </ul>
+      </div>
+
+      <!-- ELEMENTO ASSINATURA: painel de rastreio -->
+      <div class="col-lg-6">
+        <section class="track-card" aria-labelledby="track-title">
+          <div class="track-head">
+            <h2 id="track-title">Acompanhar viagem</h2>
+            <span class="track-tag">ao vivo</span>
+          </div>
+
+          <div class="track-input">
+            <label for="codigo" class="visually-hidden">Número do CT-e ou da viagem</label>
+            <input type="text" id="codigo" class="form-control" placeholder="AATR-4417-BR" autocomplete="off" spellcheck="false">
+            <button class="btn btn-brand" id="btnRastrear" type="button">Consultar</button>
+          </div>
+          <p class="track-hint">O número vem na confirmação do frete, no formato <span class="code-chip is-exemplo">AATR-4417-BR</span></p>
+
+          <div class="track-result" id="trackResult" aria-live="polite">
+            <div class="track-empty" id="trackEmpty">
+              <span class="pulse-dot" aria-hidden="true"></span>
+              Informe o número da viagem para ver onde está a carga.
+            </div>
+
+            <div class="track-body d-none" id="trackBody">
+              <div class="track-route">
+                <span class="route-from" id="routeFrom">—</span>
+                <i class="route-line" aria-hidden="true"><b id="routeTruck">🚛</b></i>
+                <span class="route-to" id="routeTo">—</span>
+              </div>
+
+              <ol class="steps-track" id="stepsTrack">
+                <li data-step="1"><b>Programada</b><span>Veículo e motorista definidos</span></li>
+                <li data-step="2"><b>Em rodovia</b><span>Viagem iniciada e monitorada</span></li>
+                <li data-step="3"><b>Chegando ao destino</b><span>Trecho final do trajeto</span></li>
+                <li data-step="4"><b>Entregue</b><span>Chegada registrada pelo motorista</span></li>
+              </ol>
+
+              <div class="track-meta">
+                <div><span>Veículo</span><b id="metaVeic">—</b></div>
+                <div><span>Distância</span><b id="metaPeso">—</b></div>
+                <div><span>Previsão</span><b id="metaPrev">—</b></div>
+              </div>
+
+              <a class="track-full" id="trackLink" href="rastreio.php" target="_blank" rel="noopener">
+                Ver a linha do tempo completa
+              </a>
+            </div>
+          </div>
+          <p class="track-note">Consulta ao sistema da AATR, atualizada a cada registro do motorista.</p>
+        </section>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= MARQUEE ROTAS ================= -->
+<div class="cities" aria-label="Praças atendidas">
+  <div class="cities-track">
+    <span>Jundiaí</span><i></i><span>Campinas</span><i></i><span>São Paulo</span><i></i><span>Ribeirão Preto</span><i></i><span>Curitiba</span><i></i><span>Joinville</span><i></i><span>Belo Horizonte</span><i></i><span>Uberlândia</span><i></i><span>Porto Alegre</span><i></i><span>Rio de Janeiro</span><i></i><span>Goiânia</span><i></i><span>Bauru</span><i></i>
+    <span>Jundiaí</span><i></i><span>Campinas</span><i></i><span>São Paulo</span><i></i><span>Ribeirão Preto</span><i></i><span>Curitiba</span><i></i><span>Joinville</span><i></i><span>Belo Horizonte</span><i></i><span>Uberlândia</span><i></i><span>Porto Alegre</span><i></i><span>Rio de Janeiro</span><i></i><span>Goiânia</span><i></i><span>Bauru</span><i></i>
+  </div>
+</div>
+
+<!-- ================= NÚMEROS ================= -->
+<section class="sec sec-tight">
+  <div class="container">
+    <div class="row g-4 stats reveal">
+      <div class="col-6 col-lg-3">
+        <b class="num" data-to="2800" data-suffix="+">0</b>
+        <span>viagens de carga fechada por ano</span>
+      </div>
+      <div class="col-6 col-lg-3">
+        <b class="num" data-to="98.4" data-decimals="1" data-suffix="%">0</b>
+        <span>entregas dentro da janela</span>
+      </div>
+      <div class="col-6 col-lg-3">
+        <b class="num" data-to="37" data-suffix=" t">0</b>
+        <span>capacidade máxima por viagem</span>
+      </div>
+      <div class="col-6 col-lg-3">
+        <b class="num" data-to="9" data-suffix=" estados">0</b>
+        <span>no Sul, Sudeste e Centro-Oeste</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVIÇOS ================= -->
+<section class="sec sec-alt" id="servicos">
+  <div class="container">
+    <div class="sec-head reveal">
+      <p class="eyebrow"><i class="lines" aria-hidden="true"></i> O que transportamos</p>
+      <h2 class="display-sec">Carga lotação, do carregamento à assinatura do canhoto</h2>
+      <p class="sec-sub">Trabalhamos com carga fechada: o veículo é seu durante toda a viagem. Cada frete sai com veículo, motorista, prazo e valor definidos antes do carregamento.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4 reveal">
+        <article class="svc">
+          <span class="svc-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
+          </span>
+          <h3>Carga lotação (FTL)</h3>
+          <p>Veículo exclusivo do carregamento à descarga. Sem transbordo em terminal, sem carga de terceiro no mesmo baú, sem paradas fora da rota.</p>
+          <p class="svc-tag">Truck · Carreta · Bitrem</p>
+        </article>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal">
+        <article class="svc">
+          <span class="svc-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M3 6h8v12H3z"/><path d="M13 6h8v12h-8z"/><path d="M11 12h2"/></svg>
+          </span>
+          <h3>Transferência entre unidades</h3>
+          <p>Abastecimento de filiais, lojas e centros de distribuição em rota fixa semanal ou mensal, respeitando a janela de recebimento de cada unidade.</p>
+          <p class="svc-tag">Rota programada · Janela agendada</p>
+        </article>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal">
+        <article class="svc">
+          <span class="svc-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 8 12 4l8 4v8l-8 4-8-4z"/><path d="M4 8l8 4 8-4M12 12v8"/></svg>
+          </span>
+          <h3>Coleta e entrega de produtos</h3>
+          <p>Retiramos no seu fornecedor ou na sua fábrica e entregamos direto no destinatário, com conferência de volumes na origem e no destino.</p>
+          <p class="svc-tag">Retirada · Entrega porta a porta</p>
+        </article>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal">
+        <article class="svc">
+          <span class="svc-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="1"/><path d="M12 6v12M7 10h2M15 10h2"/></svg>
+          </span>
+          <h3>Carga paletizada em baú</h3>
+          <p>Carga seca em pallets, caixaria ou sacaria fechada, protegida de chuva e poeira, com lacre numerado registrado no embarque.</p>
+          <p class="svc-tag">Baú · Lacre numerado</p>
+        </article>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal">
+        <article class="svc">
+          <span class="svc-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M3 15h18M3 15V9M21 15V9M7 15V9M11 15V9M15 15V9M19 15V9M2 18h20"/></svg>
+          </span>
+          <h3>Carga em grade baixa</h3>
+          <p>Volumes altos, bobinas, tambores, big bags e material de construção. Carregamento por cima ou pelas laterais, com lona, cintas e catracas.</p>
+          <p class="svc-tag">Grade baixa · Carga e descarga lateral</p>
+        </article>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal">
+        <article class="svc">
+          <span class="svc-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          </span>
+          <h3>Frota dedicada</h3>
+          <p>Veículo e motorista fixos na sua operação, por contrato mensal. O time aprende o seu processo, a sua doca e o seu cliente.</p>
+          <p class="svc-tag">Contrato mensal · Motorista fixo</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FROTA ================= -->
+<section class="sec" id="frota">
+  <div class="container">
+    <div class="sec-head reveal">
+      <p class="eyebrow"><i class="lines" aria-hidden="true"></i> Frota</p>
+      <h2 class="display-sec">O equipamento certo para o peso e para a doca</h2>
+      <p class="sec-sub">A escolha não é só pelo peso: entra altura de portaria, pé-direito da doca, restrição de circulação e como a carga vai ser descarregada. Você não paga por carreta quando um truck resolve.</p>
+    </div>
+
+    <div class="row gy-5">
+      <div class="col-lg-7">
+        <div class="fleet reveal">
+          <div class="fleet-row">
+            <b>Toco</b><span>até 7 t</span>
+            <small>2 eixos · cerca de 8 pallets · acesso a docas menores e centros urbanos</small>
+          </div>
+          <div class="fleet-row">
+            <b>Truck</b><span>até 14 t</span>
+            <small>3 eixos (truque) · cerca de 14 pallets · o cavalo de batalha das rotas médias</small>
+          </div>
+          <div class="fleet-row">
+            <b>Carreta</b><span>até 27 t</span>
+            <small>semirreboque de 3 eixos · cerca de 28 pallets · viagens interestaduais</small>
+          </div>
+          <div class="fleet-row">
+            <b>Bitrem</b><span>até 37 t</span>
+            <small>dois semirreboques acoplados · rotas longas com alto volume por viagem</small>
+          </div>
+          <div class="fleet-row">
+            <b>Grade baixa</b><span>toco a carreta</span>
+            <small>carroceria aberta · carga e descarga por empilhadeira, ponte rolante ou guindaste</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dimensionador -->
+      <div class="col-lg-5">
+        <aside class="sizer reveal" aria-labelledby="sizer-title">
+          <h3 id="sizer-title">Qual veículo a minha carga pede?</h3>
+          <p class="sizer-sub">Informe peso e volume aproximados. A sugestão é uma referência — confirmamos na cotação.</p>
+
+          <div class="sizer-fields">
+            <div>
+              <label for="szPeso">Peso total (t)</label>
+              <input type="number" id="szPeso" class="form-control" min="0" step="0.5" value="12">
+            </div>
+            <div>
+              <label for="szVol">Volume (m³)</label>
+              <input type="number" id="szVol" class="form-control" min="0" step="1" value="40">
+            </div>
+          </div>
+
+          <div class="sizer-body">
+            <span class="sizer-lbl">Carroceria</span>
+            <div class="sizer-toggle" role="group" aria-label="Tipo de carroceria">
+              <button type="button" class="on" data-body="bau">Baú</button>
+              <button type="button" data-body="grade">Grade baixa</button>
+            </div>
+          </div>
+
+          <div class="sizer-out" id="sizerOut" aria-live="polite">
+            <b id="sizerVeic">Truck</b>
+            <span id="sizerTxt">Cabe com folga: 14 t e cerca de 50 m³.</span>
+          </div>
+
+          <a href="#contato" class="btn btn-brand w-100 mt-3" id="sizerCta">Cotar esse frete</a>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CARROCERIAS ================= -->
+<section class="sec dark" id="carrocerias">
+  <div class="container">
+    <div class="sec-head reveal">
+      <p class="eyebrow light"><i class="lines" aria-hidden="true"></i> Carrocerias</p>
+      <h2 class="display-sec">Baú ou grade baixa</h2>
+      <p class="sec-sub light">A carroceria define como a carga é protegida e como ela entra e sai do caminhão. Escolher errado custa tempo de doca — e às vezes um produto avariado.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-lg-6 reveal">
+        <article class="bodytype">
+          <header>
+            <h3>Baú fechado</h3>
+            <span>Carga seca e protegida</span>
+          </header>
+          <p>Compartimento fechado e lacrado. Protege de chuva, sol, poeira e olhar de estranho. É o padrão para produto acabado, embalagem e tudo que vai paletizado.</p>
+          <ul class="ticks">
+            <li>Produto acabado, caixaria e paletizados</li>
+            <li>Sacaria e insumos que não podem molhar</li>
+            <li>Carga de valor agregado, com lacre numerado</li>
+            <li>Descarga por doca nivelada ou paleteira</li>
+          </ul>
+          <p class="bodytype-note">Ponto de atenção: precisa de doca ou empilhadeira com acesso pela traseira.</p>
+        </article>
+      </div>
+      <div class="col-lg-6 reveal">
+        <article class="bodytype">
+          <header>
+            <h3>Grade baixa</h3>
+            <span>Volume, peso e acesso livre</span>
+          </header>
+          <p>Carroceria aberta com laterais baixas, coberta com lona e amarrada com cintas e catracas. Permite carregar e descarregar por cima e pelos dois lados.</p>
+          <ul class="ticks">
+            <li>Bobinas, tambores, big bags e sacaria</li>
+            <li>Material de construção, tubos e perfis</li>
+            <li>Máquinas, estruturas e peças fora de padrão</li>
+            <li>Descarga por guindaste, ponte rolante ou Munck</li>
+          </ul>
+          <p class="bodytype-note">Ponto de atenção: carga sensível à chuva exige lona íntegra e amarração conferida.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SEGMENTOS ================= -->
+<section class="sec sec-alt">
+  <div class="container">
+    <div class="sec-head reveal">
+      <p class="eyebrow"><i class="lines" aria-hidden="true"></i> Quem carrega com a gente</p>
+      <h2 class="display-sec">Setores que já conhecem a nossa amarração</h2>
+    </div>
+    <div class="row g-3">
+      <div class="col-6 col-md-4 col-lg-3 reveal"><div class="seg">Indústria e metalurgia</div></div>
+      <div class="col-6 col-md-4 col-lg-3 reveal"><div class="seg">Construção civil</div></div>
+      <div class="col-6 col-md-4 col-lg-3 reveal"><div class="seg">Embalagens e plásticos</div></div>
+      <div class="col-6 col-md-4 col-lg-3 reveal"><div class="seg">Agronegócio e sacaria</div></div>
+      <div class="col-6 col-md-4 col-lg-3 reveal"><div class="seg">Alimentos secos e bebidas</div></div>
+      <div class="col-6 col-md-4 col-lg-3 reveal"><div class="seg">Autopeças</div></div>
+      <div class="col-6 col-md-4 col-lg-3 reveal"><div class="seg">Papel e celulose</div></div>
+      <div class="col-6 col-md-4 col-lg-3 reveal"><div class="seg">Máquinas e equipamentos</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COMO FUNCIONA ================= -->
+<section class="sec dark" id="como-funciona">
+  <div class="container">
+    <div class="sec-head reveal">
+      <p class="eyebrow light"><i class="lines" aria-hidden="true"></i> Da cotação ao canhoto</p>
+      <h2 class="display-sec">Cinco etapas, nessa ordem, sempre</h2>
+    </div>
+    <div class="row g-4 flow">
+      <div class="col-md-6 col-lg reveal">
+        <div class="flow-item">
+          <span class="flow-n">01</span>
+          <h3>Cotação</h3>
+          <p>Você informa origem, destino, peso, volume e tipo de carga. Devolvemos veículo indicado, prazo e valor fechado.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg reveal">
+        <div class="flow-item">
+          <span class="flow-n">02</span>
+          <h3>Programação</h3>
+          <p>Definimos data e hora do carregamento, conferimos a nota fiscal e emitimos CT-e e MDF-e antes de o veículo sair.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg reveal">
+        <div class="flow-item">
+          <span class="flow-n">03</span>
+          <h3>Carregamento</h3>
+          <p>Motorista identificado, checklist do equipamento, conferência de volumes e amarração com cintas e catracas.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg reveal">
+        <div class="flow-item">
+          <span class="flow-n">04</span>
+          <h3>Viagem monitorada</h3>
+          <p>Rastreamento por satélite, macros de posição e contato direto com quem está dirigindo o seu caminhão.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg reveal">
+        <div class="flow-item">
+          <span class="flow-n">05</span>
+          <h3>Descarga</h3>
+          <p>Chegada dentro da janela combinada, descarga acompanhada e canhoto assinado digitalizado no mesmo dia.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SEGURANÇA ================= -->
+<section class="sec" id="seguranca">
+  <div class="container">
+    <div class="row gy-5 align-items-start">
+      <div class="col-lg-4 reveal">
+        <p class="eyebrow"><i class="lines" aria-hidden="true"></i> Segurança e documentação</p>
+        <h2 class="display-sec">Carga pesada exige processo, não sorte</h2>
+        <p class="sec-sub">Documento em ordem e amarração conferida são o que separam uma entrega tranquila de um sinistro caro. Aqui isso é rotina de embarque, não exceção.</p>
+        <a href="#contato" class="btn btn-brand mt-2">Falar com a operação</a>
+      </div>
+      <div class="col-lg-8">
+        <div class="row g-4">
+          <div class="col-md-6 reveal"><div class="promise"><h3>CT-e e MDF-e emitidos</h3><p>Documentação fiscal do transporte emitida antes do veículo deixar o pátio, com a nota do embarcador conferida.</p></div></div>
+          <div class="col-md-6 reveal"><div class="promise"><h3>Seguro de carga</h3><p>Cobertura RCTR-C para todo o trajeto e RCF-DC para desaparecimento de carga, com valor declarado registrado.</p></div></div>
+          <div class="col-md-6 reveal"><div class="promise"><h3>Rastreamento por satélite</h3><p>Posição do veículo durante toda a viagem, com histórico da rota disponível para consulta.</p></div></div>
+          <div class="col-md-6 reveal"><div class="promise"><h3>Gerenciamento de risco</h3><p>Motorista consultado e liberado, rota aprovada e pontos de parada definidos antes do embarque.</p></div></div>
+          <div class="col-md-6 reveal"><div class="promise"><h3>Amarração conferida</h3><p>Cintas, catracas, calços e lona verificados no carregamento e registrados em foto no início da viagem.</p></div></div>
+          <div class="col-md-6 reveal"><div class="promise"><h3>Canhoto digitalizado</h3><p>Comprovante de entrega assinado, fotografado e enviado por e-mail e WhatsApp no mesmo dia da descarga.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ROTAS ================= -->
+<section class="sec sec-alt" id="cobertura">
+  <div class="container">
+    <div class="sec-head reveal">
+      <p class="eyebrow"><i class="lines" aria-hidden="true"></i> Onde rodamos</p>
+      <h2 class="display-sec">Base em Jundiaí, carga fechada para nove estados</h2>
+      <p class="sec-sub">Saídas diárias no estado de São Paulo e viagens interestaduais programadas. Fora dessa lista, cotamos como carga fechada sob consulta.</p>
+    </div>
+    <div class="row g-3 coverage">
+      <div class="col-6 col-md-4 col-lg-3 reveal"><div class="cov">São Paulo<small>Diário · capital e interior</small></div></div>
+      <div class="col-6 col-md-4 col-lg-3 reveal"><div class="cov">Minas Gerais<small>Saídas semanais</small></div></div>
+      <div class="col-6 col-md-4 col-lg-3 reveal"><div class="cov">Paraná<small>Saídas semanais</small></div></div>
+      <div class="col-6 col-md-4 col-lg-3 reveal"><div class="cov">Santa Catarina<small>Saídas semanais</small></div></div>
+      <div class="col-6 col-md-4 col-lg-3 reveal"><div class="cov">Rio Grande do Sul<small>Sob programação</small></div></div>
+      <div class="col-6 col-md-4 col-lg-3 reveal"><div class="cov">Rio de Janeiro<small>Saídas semanais</small></div></div>
+      <div class="col-6 col-md-4 col-lg-3 reveal"><div class="cov">Goiás e DF<small>Sob programação</small></div></div>
+      <div class="col-6 col-md-4 col-lg-3 reveal"><div class="cov">Mato Grosso do Sul<small>Sob programação</small></div></div>
+      <div class="col-6 col-md-4 col-lg-3 reveal"><div class="cov">Espírito Santo<small>Sob programação</small></div></div>
+      <div class="col-6 col-md-4 col-lg-3 reveal"><div class="cov cov-cta">Outro estado?<small>Cotamos carga fechada</small></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="sec" id="faq">
+  <div class="container">
+    <div class="row gy-5">
+      <div class="col-lg-4 reveal">
+        <p class="eyebrow"><i class="lines" aria-hidden="true"></i> Dúvidas frequentes</p>
+        <h2 class="display-sec">O que perguntam antes de fechar</h2>
+        <p class="sec-sub">Se a sua dúvida não estiver aqui, chame no WhatsApp — quem responde é quem programa as viagens.</p>
+      </div>
+      <div class="col-lg-8 reveal">
+        <div class="accordion faq" id="faqAcc">
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q1">Vocês trabalham só com carga fechada?</button>
+            </h3>
+            <div id="q1" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+              <div class="accordion-body">A operação é focada em lotação: o veículo vai exclusivo para a sua carga. Cargas parciais entram quando conseguimos completar a viagem com um segundo embarque na mesma rota — nesse caso avisamos antes de fechar o preço.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q2">Como escolho entre baú e grade baixa?</button>
+            </h3>
+            <div id="q2" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+              <div class="accordion-body">Baú para carga que precisa ficar protegida e sai por doca ou paleteira. Grade baixa para volume alto, peça fora de padrão ou quando a descarga é feita por cima, com guindaste ou ponte rolante. Na dúvida, descreva a carga na cotação que indicamos o equipamento.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q3">Com quanta antecedência preciso programar o carregamento?</button>
+            </h3>
+            <div id="q3" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+              <div class="accordion-body">Dentro de São Paulo conseguimos carregar no mesmo dia ou no dia seguinte, conforme a disponibilidade da frota. Para viagens interestaduais e bitrem, o ideal é programar com 48 horas.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q4">Como funciona o seguro da carga?</button>
+            </h3>
+            <div id="q4" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+              <div class="accordion-body">Toda viagem sai com apólice de responsabilidade civil do transportador, e o valor declarado da mercadoria é registrado na emissão do CT-e. Para cargas de alto valor, alinhamos as exigências do gerenciamento de risco antes do embarque.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q5">Vocês fazem a descarga no destino?</button>
+            </h3>
+            <div id="q5" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+              <div class="accordion-body">O motorista acompanha e confere a descarga, mas o equipamento e a mão de obra são normalmente do destinatário. Se precisar de ajudante ou de Munck, informe na cotação para incluirmos no valor.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q6">Dá para acompanhar a viagem?</button>
+            </h3>
+            <div id="q6" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+              <div class="accordion-body">Sim. O veículo é rastreado por satélite e enviamos as atualizações de posição pelo canal que você preferir. O contato do motorista também fica disponível durante toda a viagem.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTATO ================= -->
+<section class="sec dark" id="contato">
+  <div class="container">
+    <div class="row gy-5 align-items-start">
+      <div class="col-lg-5 reveal">
+        <p class="eyebrow light"><i class="lines" aria-hidden="true"></i> Cotação</p>
+        <h2 class="display-sec">Conte o que precisa sair do pátio</h2>
+        <p class="sec-sub light">Respondemos com veículo indicado, prazo e valor no mesmo dia útil. Se o carregamento é para hoje, chame direto no WhatsApp.</p>
+
+        <ul class="contact-list">
+          <li><span>WhatsApp</span><a href="https://wa.me/5511969104308" target="_blank" rel="noopener">(11) 96910-4308</a></li>
+          <li><span>E-mail</span><a href="mailto:contato@aatrtransporte.com.br">contato@aatrtransporte.com.br</a></li>
+          <li><span>Base</span><b>Jundiaí — SP</b></li>
+          <li><span>Programação</span><b>Seg a sex, 7h às 19h · Sáb, 8h às 13h</b></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-7 reveal">
+        <form class="quote" id="quoteForm" novalidate>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="nome">Seu nome</label>
+              <input type="text" id="nome" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+              <label for="empresa">Empresa</label>
+              <input type="text" id="empresa" class="form-control">
+            </div>
+            <div class="col-md-6">
+              <label for="fone">WhatsApp</label>
+              <input type="tel" id="fone" class="form-control" placeholder="(11) 90000-0000" required>
+            </div>
+            <div class="col-md-6">
+              <label for="servico">Serviço</label>
+              <select id="servico" class="form-select">
+                <option>Carga lotação (FTL)</option>
+                <option>Transferência entre unidades</option>
+                <option>Coleta e entrega de produtos</option>
+                <option>Carga paletizada em baú</option>
+                <option>Carga em grade baixa</option>
+                <option>Frota dedicada</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label for="origem">Carregamento em</label>
+              <input type="text" id="origem" class="form-control" placeholder="Cidade / UF" required>
+            </div>
+            <div class="col-md-6">
+              <label for="destino">Descarga em</label>
+              <input type="text" id="destino" class="form-control" placeholder="Cidade / UF" required>
+            </div>
+            <div class="col-md-4">
+              <label for="peso">Peso (t)</label>
+              <input type="number" id="peso" class="form-control" min="0" step="0.5" placeholder="12">
+            </div>
+            <div class="col-md-4">
+              <label for="carroceria">Carroceria</label>
+              <select id="carroceria" class="form-select">
+                <option>Baú</option>
+                <option>Grade baixa</option>
+                <option>Indicar pela AATR</option>
+              </select>
+            </div>
+            <div class="col-md-4">
+              <label for="veiculo">Veículo</label>
+              <select id="veiculo" class="form-select">
+                <option>Indicar pela AATR</option>
+                <option>Toco</option>
+                <option>Truck</option>
+                <option>Carreta</option>
+                <option>Bitrem</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <label for="detalhes">O que vamos carregar</label>
+              <textarea id="detalhes" class="form-control" rows="3" placeholder="Tipo de produto, quantidade de pallets ou volumes, dimensões fora de padrão, data desejada, como é feita a descarga..."></textarea>
+            </div>
+            <div class="col-12 quote-actions">
+              <button type="submit" class="btn btn-brand btn-lg">Enviar cotação pelo WhatsApp</button>
+              <p class="quote-note" id="quoteNote">Abrimos o WhatsApp com a mensagem pronta. Você só confere e envia.</p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-lg-4">
+        <img src="logo-aatr-branco.png" alt="AATR Transporte e Logística" class="foot-logo">
+        <p class="foot-tag">Entregas rápidas, soluções inteligentes.</p>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h4>Serviços</h4>
+        <a href="#servicos">Carga lotação</a>
+        <a href="#servicos">Transferências</a>
+        <a href="#servicos">Coleta e entrega</a>
+        <a href="#servicos">Frota dedicada</a>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h4>Operação</h4>
+        <a href="#frota">Frota</a>
+        <a href="#carrocerias">Carrocerias</a>
+        <a href="#cobertura">Rotas</a>
+        <a href="#seguranca">Segurança</a>
+        <a href="motorista.php">Área do motorista</a>
+      </div>
+      <div class="col-lg-4">
+        <h4>Falar agora</h4>
+        <a href="https://wa.me/5511969104308" target="_blank" rel="noopener">WhatsApp (11) 96910-4308</a>
+        <a href="mailto:contato@aatrtransporte.com.br">contato@aatrtransporte.com.br</a>
+        <p class="foot-small">Jundiaí — SP · CNPJ 26.862.198/0001-06</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="ano">2026</span> AATR Transporte &amp; Logística</span>
+      <span>Carga fechada, rodando todo dia.</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/5511969104308" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.6-.1-.4-.1-.9-.3-1.5-.6-2.6-1.1-4.3-3.8-4.4-4-.1-.2-1-1.4-1-2.6s.6-1.8.9-2.1c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1.9 1.9 1.2 2.2 1.3.3.1.4.1.6-.1l.9-1c.2-.2.3-.2.6-.1l2 .9c.2.1.4.2.4.3v.7Z"/></svg>
+</a>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

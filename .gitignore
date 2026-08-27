@@ -1,0 +1,32 @@
+# ============================================================
+#  AATR — o que NÃO vai para o repositório
+# ============================================================
+
+# ---------- Credenciais ----------
+# É aqui que ficam usuário e senha do banco de produção.
+# Este arquivo NUNCA pode ser versionado. O config.php que vai
+# no repositório tem só valores de exemplo.
+config.local.php
+
+# ---------- Backups antigos da pasta ----------
+files.zip
+*.rar
+*.bak
+*.old
+
+# ---------- Logs e temporários ----------
+*.log
+error_log
+php_errors.log
+*.tmp
+
+# ---------- Editor / sistema operacional ----------
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# ---------- Dependências (não usamos, mas por garantia) ----------
+vendor/
+node_modules/

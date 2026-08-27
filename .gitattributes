@@ -1,0 +1,17 @@
+# Guarda tudo com quebra de linha LF no repositório.
+# No Windows o Git converte para CRLF ao baixar; no servidor
+# Linux da hospedagem os arquivos chegam limpos.
+* text=auto eol=lf
+
+# Arquivos que são do Windows e devem continuar com CRLF
+*.bat text eol=crlf
+
+# Binários: o Git não deve tentar converter nada
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.zip binary
+*.rar binary
+*.pdf binary
